@@ -1,0 +1,18 @@
+[submodule "manifold-rust"]
+	path = manifold-rust
+	url = https://github.com/larsbrubaker/manifold-rust.git
+[submodule "agg-rust"]
+	path = agg-rust
+	url = https://github.com/larsbrubaker/agg-rust.git
+[submodule "agg-gui"]
+	path = agg-gui
+	url = https://github.com/larsbrubaker/agg-gui.git
+[submodule "clipper2-rust"]
+	path = clipper2-rust
+	url = https://github.com/larsbrubaker/clipper2-rust.git
+[submodule "tess2-rust"]
+	path = tess2-rust
+	url = https://github.com/larsbrubaker/tess2-rust.git
+[submodule "Thingi10K"]
+	path = Thingi10K
+	url = https://github.com/larsbrubaker/Thingi10K.git
