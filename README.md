@@ -18,13 +18,21 @@ git submodule update --remote --merge
 
 ## Repositories
 
-### [manifold-rust](https://github.com/larsbrubaker/manifold-rust)
+### [clipper2-rust](https://github.com/larsbrubaker/clipper2-rust)
 
-Pure Rust port of the [Manifold](https://github.com/elalish/manifold) 3D geometry library — fast, robust, watertight boolean operations on triangle meshes.
+Complete, pure Rust port of the [Clipper2 C++ library](https://github.com/AngusJohnson/Clipper2) by Angus Johnson — polygon clipping and offsetting with support for union, intersection, difference, and XOR operations.
 
-[![manifold-rust demo](https://raw.githubusercontent.com/larsbrubaker/manifold-rust/main/README_HERO.png)](https://larsbrubaker.github.io/manifold-rust/)
+[![clipper2-rust demo](https://raw.githubusercontent.com/larsbrubaker/clipper2-rust/main/docs/demo-screenshot.png)](https://larsbrubaker.github.io/clipper2-rust/)
 
-[Live Demo](https://larsbrubaker.github.io/manifold-rust/) · [Repository](https://github.com/larsbrubaker/manifold-rust)
+[Live Demo](https://larsbrubaker.github.io/clipper2-rust/) · [Repository](https://github.com/larsbrubaker/clipper2-rust)
+
+---
+
+### [tess2-rust](https://github.com/larsbrubaker/tess2-rust)
+
+Pure Rust port of [libtess2](https://github.com/memononen/libtess2) — the SGI tessellation library for converting complex polygons (including self-intersecting and with holes) into triangles.
+
+[Live Demo](https://larsbrubaker.github.io/tess2-rust/) · [Repository](https://github.com/larsbrubaker/tess2-rust)
 
 ---
 
@@ -38,13 +46,21 @@ Pure Rust port of [Anti-Grain Geometry (AGG) 2.6](http://www.antigrain.com/) —
 
 ---
 
-### [clipper2-rust](https://github.com/larsbrubaker/clipper2-rust)
+### [agg-gui](https://github.com/larsbrubaker/agg-gui)
 
-Complete, pure Rust port of the [Clipper2 C++ library](https://github.com/AngusJohnson/Clipper2) by Angus Johnson — polygon clipping and offsetting with support for union, intersection, difference, and XOR operations.
+A Rust GUI framework built on top of [agg-rust](https://github.com/larsbrubaker/agg-rust) — provides widgets, layout, and rendering for desktop applications using AGG as the rendering backend.
 
-[![clipper2-rust demo](https://raw.githubusercontent.com/larsbrubaker/clipper2-rust/main/docs/demo-screenshot.png)](https://larsbrubaker.github.io/clipper2-rust/)
+[Repository](https://github.com/larsbrubaker/agg-gui)
 
-[Live Demo](https://larsbrubaker.github.io/clipper2-rust/) · [Repository](https://github.com/larsbrubaker/clipper2-rust)
+---
+
+### [manifold-rust](https://github.com/larsbrubaker/manifold-rust)
+
+Pure Rust port of the [Manifold](https://github.com/elalish/manifold) 3D geometry library — fast, robust, watertight boolean operations on triangle meshes.
+
+[![manifold-rust demo](https://raw.githubusercontent.com/larsbrubaker/manifold-rust/main/README_HERO.png)](https://larsbrubaker.github.io/manifold-rust/)
+
+[Live Demo](https://larsbrubaker.github.io/manifold-rust/) · [Repository](https://github.com/larsbrubaker/manifold-rust)
 
 ---
 
@@ -55,19 +71,3 @@ Searchable 3D model archive browser for the [Thingi10K dataset](https://ten-thou
 [![Thingi10K demo](https://raw.githubusercontent.com/larsbrubaker/Thingi10K/main/docs/screenshot.png)](https://larsbrubaker.github.io/Thingi10K/)
 
 [Live Demo](https://larsbrubaker.github.io/Thingi10K/) · [Repository](https://github.com/larsbrubaker/Thingi10K)
-
----
-
-### [tess2-rust](https://github.com/larsbrubaker/tess2-rust)
-
-Pure Rust port of [libtess2](https://github.com/memononen/libtess2) — the SGI tessellation library for converting complex polygons (including self-intersecting and with holes) into triangles.
-
-[Live Demo](https://larsbrubaker.github.io/tess2-rust/) · [Repository](https://github.com/larsbrubaker/tess2-rust)
-
----
-
-### [agg-gui](https://github.com/larsbrubaker/agg-gui)
-
-A Rust GUI framework built on top of [agg-rust](https://github.com/larsbrubaker/agg-rust) — provides widgets, layout, and rendering for desktop applications using AGG as the rendering backend.
-
-[Repository](https://github.com/larsbrubaker/agg-gui)
