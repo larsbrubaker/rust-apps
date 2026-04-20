@@ -32,6 +32,8 @@ Complete, pure Rust port of the [Clipper2 C++ library](https://github.com/AngusJ
 
 Pure Rust port of [libtess2](https://github.com/memononen/libtess2) — the SGI tessellation library for converting complex polygons (including self-intersecting and with holes) into triangles.
 
+[![tess2-rust demo](https://raw.githubusercontent.com/larsbrubaker/tess2-rust/main/demo/src/static/tess2.png)](https://larsbrubaker.github.io/tess2-rust/)
+
 [Live Demo](https://larsbrubaker.github.io/tess2-rust/) · [Repository](https://github.com/larsbrubaker/tess2-rust)
 
 ---
@@ -49,6 +51,8 @@ Pure Rust port of [Anti-Grain Geometry (AGG) 2.6](http://www.antigrain.com/) —
 ### [agg-gui](https://github.com/larsbrubaker/agg-gui)
 
 A Rust GUI framework built on top of [agg-rust](https://github.com/larsbrubaker/agg-rust) — provides widgets, layout, and rendering for desktop applications using AGG as the rendering backend.
+
+[![agg-gui demo](https://raw.githubusercontent.com/larsbrubaker/agg-gui/main/readme_hero.png)](https://github.com/larsbrubaker/agg-gui)
 
 [Repository](https://github.com/larsbrubaker/agg-gui)
 
