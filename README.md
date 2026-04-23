@@ -50,11 +50,11 @@ Pure Rust port of [Anti-Grain Geometry (AGG) 2.6](http://www.antigrain.com/) —
 
 ### [agg-gui](https://github.com/larsbrubaker/agg-gui)
 
-A Rust GUI framework built on top of [agg-rust](https://github.com/larsbrubaker/agg-rust) — provides widgets, layout, and rendering for desktop applications using AGG as the rendering backend.
+A Rust GUI framework built on top of [agg-rust](https://github.com/larsbrubaker/agg-rust) — provides widgets, layout, and rendering for desktop applications using AGG as the rendering backend.  Immediate-mode widget tree, Y-up coordinates, halo-AA GL pipeline, multi-touch support.
 
 [![agg-gui demo](https://raw.githubusercontent.com/larsbrubaker/agg-gui/main/readme_hero.png)](https://larsbrubaker.github.io/agg-gui/)
 
-[Live Demo](https://larsbrubaker.github.io/agg-gui/) · [Repository](https://github.com/larsbrubaker/agg-gui)
+[![crates.io](https://img.shields.io/crates/v/agg-gui.svg)](https://crates.io/crates/agg-gui) · [Live Demo](https://larsbrubaker.github.io/agg-gui/) · [Repository](https://github.com/larsbrubaker/agg-gui)
 
 ---
 
