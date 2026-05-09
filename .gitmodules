@@ -16,3 +16,6 @@
 [submodule "Thingi10K"]
 	path = Thingi10K
 	url = https://github.com/larsbrubaker/Thingi10K.git
+[submodule "Antidote"]
+	path = Antidote
+	url = https://github.com/larsbrubaker/antidote.git
