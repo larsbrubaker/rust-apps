@@ -75,3 +75,11 @@ Searchable 3D model archive browser for the [Thingi10K dataset](https://ten-thou
 [![Thingi10K demo](https://raw.githubusercontent.com/larsbrubaker/Thingi10K/main/docs/screenshot.png)](https://larsbrubaker.github.io/Thingi10K/)
 
 [Live Demo](https://larsbrubaker.github.io/Thingi10K/) · [Repository](https://github.com/larsbrubaker/Thingi10K)
+
+---
+
+### [antidote](https://github.com/larsbrubaker/antidote)
+
+Bubble-trap virus puzzle game in Rust — rendered with [agg-gui](https://github.com/larsbrubaker/agg-gui), physics by [rapier2d](https://rapier.rs/), persisted to a multi-game Supabase Postgres backend. Runs natively (winit + wgpu) and in the browser (WebAssembly).
+
+[Live Demo](https://larsbrubaker.github.io/antidote/) · [Repository](https://github.com/larsbrubaker/antidote)
