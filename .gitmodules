@@ -19,3 +19,6 @@
 [submodule "Antidote"]
 	path = Antidote
 	url = https://github.com/larsbrubaker/antidote.git
+[submodule "Solitaire"]
+	path = Solitaire
+	url = https://github.com/larsbrubaker/solitaire.git
