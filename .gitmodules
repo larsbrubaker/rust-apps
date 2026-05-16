@@ -22,3 +22,6 @@
 [submodule "Solitaire"]
 	path = Solitaire
 	url = https://github.com/larsbrubaker/solitaire.git
+[submodule "Marbles"]
+	path = Marbles
+	url = https://github.com/larsbrubaker/marbles.git
