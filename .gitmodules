@@ -25,3 +25,9 @@
 [submodule "Marbles"]
 	path = Marbles
 	url = https://github.com/larsbrubaker/marbles.git
+[submodule "atomartist"]
+	path = atomartist
+	url = https://github.com/larsbrubaker/atomartist.git
+[submodule "GFG"]
+	path = GFG
+	url = https://github.com/larsbrubaker/GFG.git
