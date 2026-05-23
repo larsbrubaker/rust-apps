@@ -78,6 +78,16 @@ Searchable 3D model archive browser for the [Thingi10K dataset](https://ten-thou
 
 ---
 
+### [atomartist](https://github.com/larsbrubaker/atomartist)
+
+Visual node-based 3D design tool in pure Rust. Wire together typed nodes — primitives, transforms, boolean operations, extrusions, imported meshes — and watch the resulting 3D geometry update live in the viewport. Built on [agg-gui](https://github.com/larsbrubaker/agg-gui), [manifold-rust](https://github.com/larsbrubaker/manifold-rust), [clipper2-rust](https://github.com/larsbrubaker/clipper2-rust), and [tess2-rust](https://github.com/larsbrubaker/tess2-rust). Runs natively (Windows / macOS / Linux) and in the browser (WASM via WebGPU / WebGL2).
+
+[![atomartist demo](https://raw.githubusercontent.com/larsbrubaker/atomartist/main/readme_hero.png)](https://larsbrubaker.github.io/atomartist/)
+
+[Live Demo](https://larsbrubaker.github.io/atomartist/) · [Repository](https://github.com/larsbrubaker/atomartist)
+
+---
+
 ### [antidote](https://github.com/larsbrubaker/antidote)
 
 Bubble-trap virus puzzle game in Rust — rendered with [agg-gui](https://github.com/larsbrubaker/agg-gui), physics by [rapier2d](https://rapier.rs/), persisted to a multi-game Supabase Postgres backend. Runs natively (winit + wgpu) and in the browser (WebAssembly).
