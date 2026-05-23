@@ -82,4 +82,16 @@ Searchable 3D model archive browser for the [Thingi10K dataset](https://ten-thou
 
 Bubble-trap virus puzzle game in Rust — rendered with [agg-gui](https://github.com/larsbrubaker/agg-gui), physics by [rapier2d](https://rapier.rs/), persisted to a multi-game Supabase Postgres backend. Runs natively (winit + wgpu) and in the browser (WebAssembly).
 
+[![antidote demo](https://raw.githubusercontent.com/larsbrubaker/antidote/main/readme_hero.png)](https://larsbrubaker.github.io/antidote/)
+
 [Live Demo](https://larsbrubaker.github.io/antidote/) · [Repository](https://github.com/larsbrubaker/antidote)
+
+---
+
+### [solitaire](https://github.com/larsbrubaker/solitaire)
+
+Four solitaire variants in Rust — Klondike, FreeCell, Spider, and Microsoft-style Classic. Rendered with [agg-gui](https://github.com/larsbrubaker/agg-gui), persisted to the same Supabase backend as antidote. Runs natively (winit + wgpu) and in the browser (WebAssembly).
+
+[![solitaire demo](https://raw.githubusercontent.com/larsbrubaker/solitaire/main/readme_hero.png)](https://larsbrubaker.github.io/solitaire/)
+
+[Live Demo](https://larsbrubaker.github.io/solitaire/) · [Repository](https://github.com/larsbrubaker/solitaire)
