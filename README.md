@@ -105,3 +105,13 @@ Four solitaire variants in Rust — Klondike, FreeCell, Spider, and Microsoft-st
 [![solitaire demo](https://raw.githubusercontent.com/larsbrubaker/solitaire/main/readme_hero.png)](https://larsbrubaker.github.io/solitaire/)
 
 [Live Demo](https://larsbrubaker.github.io/solitaire/) · [Repository](https://github.com/larsbrubaker/solitaire)
+
+---
+
+### [instant-astronomer](https://github.com/larsbrubaker/instant-astronomer)
+
+Point your phone at the sky and see what you're looking at — stars, planets, the Sun, the Moon, constellations, all driven by your location, the current time, and (on mobile) the device's compass + IMU. Tap any bright object to identify it: "that's Venus, magnitude −4.4." Rendered entirely through [agg-gui](https://github.com/larsbrubaker/agg-gui) — no separate WebGL / wgpu 3-D pipeline. Runs natively (winit + wgpu) and in the browser (WebAssembly).
+
+[![instant-astronomer demo](https://raw.githubusercontent.com/larsbrubaker/instant-astronomer/master/readme_hero.png)](https://larsbrubaker.github.io/instant-astronomer/)
+
+[Live Demo](https://larsbrubaker.github.io/instant-astronomer/) · [Repository](https://github.com/larsbrubaker/instant-astronomer)
