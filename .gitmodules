@@ -31,3 +31,6 @@
 [submodule "GFG"]
 	path = GFG
 	url = https://github.com/larsbrubaker/GFG.git
+[submodule "instant-astronomer"]
+	path = instant-astronomer
+	url = https://github.com/larsbrubaker/instant-astronomer.git
