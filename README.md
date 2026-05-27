@@ -122,7 +122,7 @@ Point your phone at the sky and see what you're looking at — stars, planets, t
 
 <a href="https://buymeacoffee.com/larsbrubaker"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50" width="210"></a>
 
-This project — and the libraries and apps it bundles — is open-source and free to use, maintained in spare time as a labor of love.
+This project — and the libraries and apps it bundles — is open-source and free to use, maintained in spare time as a labor of love. Friends James Smith and Dan Ruskin help out from time to time too.
 
 If you find it useful, here are a few ways to help keep development going:
 
