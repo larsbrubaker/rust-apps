@@ -1,5 +1,7 @@
 # Rust Apps
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/larsbrubaker)
+
 A collection of Lars Brubaker's Rust libraries and applications. Each repository is included as a submodule so you can clone them all at once and keep them up to date.
 
 ## Clone with all submodules
