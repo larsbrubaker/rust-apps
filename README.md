@@ -1,12 +1,12 @@
 # Rust Apps
 
-![Rust Apps](readme_hero.png)
+[![Rust Apps](readme_hero.png)](https://larsbrubaker.github.io/rust-apps/)
 
 A curated suite of Rust libraries and applications by Lars Brubaker, bundled together as Git submodules so you can clone, build, and update them in one shot.
 
 The stack works from the bottom up: low-level geometry libraries (clipper2-rust, tess2-rust, manifold-rust) feed into the AGG-based rendering core (agg-rust + agg-gui), which in turn powers the end-user apps (atomartist, antidote, solitaire, instant-astronomer, Thingi10K). Everything is pure Rust, runs natively on Windows / macOS / Linux, and most of the apps also build to WebAssembly so you can try them in a browser without installing anything.
 
-A live stats dashboard for every repo in the suite — stars, forks, watchers, open issues, open PRs — is published from this repo via GitHub Pages.
+[**Live stats dashboard**](https://larsbrubaker.github.io/rust-apps/) — stars, forks, watchers, open issues, and open PRs for every repo in the suite, refreshed daily via GitHub Pages.
 
 ## Clone with all submodules
 
