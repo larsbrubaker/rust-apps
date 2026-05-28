@@ -136,10 +136,31 @@ def build_query(repos: list[dict]) -> str:
 
 def fetch_stats(repos: list[dict]) -> list[dict]:
     query = build_query(repos)
-    out = run(["gh", "api", "graphql", "-f", f"query={query}"])
-    payload = json.loads(out)
+    # gh exits non-zero when the GraphQL response contains `errors`, but the
+    # response body still has `data` for the repos that resolved. Don't use
+    # run() here — parse stdout ourselves and treat per-repo errors as
+    # missing rows rather than a hard failure. This is what lets the
+    # workflow succeed when the default GITHUB_TOKEN can't see a private
+    # repo listed in .gitmodules.
+    result = subprocess.run(
+        ["gh", "api", "graphql", "-f", f"query={query}"],
+        capture_output=True, text=True, encoding="utf-8",
+    )
+    try:
+        payload = json.loads(result.stdout) if result.stdout else None
+    except json.JSONDecodeError:
+        payload = None
+    if not payload:
+        sys.stderr.write(
+            f"gh api graphql failed (exit {result.returncode}):\n"
+            f"  stdout: {result.stdout[:500]}\n"
+            f"  stderr: {result.stderr}\n"
+        )
+        raise SystemExit(result.returncode or 1)
     if "errors" in payload:
-        sys.stderr.write("GraphQL errors:\n" + json.dumps(payload["errors"], indent=2) + "\n")
+        sys.stderr.write("GraphQL errors (some repos unavailable to this token):\n")
+        for e in payload["errors"]:
+            sys.stderr.write(f"  - {e.get('type', '?')}: {e.get('message', '')}\n")
     data = payload.get("data") or {}
     rows: list[dict] = []
     for i, r in enumerate(repos):
