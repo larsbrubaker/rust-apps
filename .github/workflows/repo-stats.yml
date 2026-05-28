@@ -1,0 +1,83 @@
+name: Build and Deploy Repo Stats
+
+# Regenerates repo_stats.html and publishes it to GitHub Pages.
+#
+# Runs:
+#   - Daily at 07:17 UTC (catches upstream star/fork changes)
+#   - Manually via the "Run workflow" button
+#
+# Push-triggered rebuilds are intentionally disabled for now. To re-enable
+# them later, add:
+#   push:
+#     branches: [main]
+#
+# One-time setup: Settings → Pages → Source: "GitHub Actions".
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 7 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (without submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Initialize public submodules (skip inaccessible)
+        # The default GITHUB_TOKEN can't clone private submodules. Init each
+        # one individually so private ones fail in isolation rather than
+        # aborting the whole step. The stats script already filters out
+        # private repos when querying the GitHub API.
+        run: |
+          git config --file .gitmodules --name-only --get-regexp '\.path$' | while read -r path_key; do
+            path=$(git config --file .gitmodules --get "$path_key")
+            if git submodule update --init --depth 1 -- "$path"; then
+              echo "ok: $path"
+            else
+              echo "::warning::Skipping inaccessible submodule: $path"
+            fi
+          done
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Generate stats page
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p _site
+          python repo_stats.py --out _site/index.html --json
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
