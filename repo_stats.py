@@ -290,6 +290,15 @@ METRICS = [
     ("prs",       "PRs",       "&#8644;"),  # arrows
 ]
 
+# Per-metric path appended to a repo's URL to deep-link to the relevant page.
+METRIC_PATHS = {
+    "stars":    "/stargazers",
+    "forks":    "/forks",
+    "watchers": "/watchers",
+    "issues":   "/issues",
+    "prs":      "/pulls",
+}
+
 
 def render_html(rows: list[dict], generated_at: datetime) -> str:
     visible = [r for r in rows if not r.get("missing")]
@@ -315,6 +324,12 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
         pushed_human = humanize_pushed(pushed_iso)
         pushed_epoch = int(datetime.fromisoformat(pushed_iso.replace("Z", "+00:00")).timestamp())
         name_sort = r["label"].lower()
+        metric_cells = "".join(
+            f'<td class="num" data-sort="{r[key]}">'
+            f'<a class="metric-link" href="{esc(r["url"] + METRIC_PATHS[key])}" '
+            f'target="_blank" rel="noopener">{r[key]:,}</a></td>'
+            for key, _, _ in METRICS
+        )
         thumb_html = ""
         if r.get("heroImage"):
             thumb_html = (
@@ -338,11 +353,7 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
               </div>
             </div>
           </td>
-          <td class="num" data-sort="{r['stars']}">{r['stars']:,}</td>
-          <td class="num" data-sort="{r['forks']}">{r['forks']:,}</td>
-          <td class="num" data-sort="{r['watchers']}">{r['watchers']:,}</td>
-          <td class="num" data-sort="{r['issues']}">{r['issues']:,}</td>
-          <td class="num" data-sort="{r['prs']}">{r['prs']:,}</td>
+          {metric_cells}
           <td class="num pushed" data-sort="{pushed_epoch}" title="{esc(pushed_iso)}">{esc(pushed_human)}</td>
         </tr>""")
 
@@ -514,6 +525,8 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
   .lang {{ display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }}
   .lang-dot {{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }}
   td.num {{ text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; white-space: nowrap; }}
+  .metric-link {{ color: inherit; text-decoration: none; }}
+  .metric-link:hover {{ color: var(--accent); text-decoration: underline; }}
   td.pushed {{ color: var(--muted); font-weight: 400; }}
   .muted {{ color: var(--muted); }}
   .warn {{
