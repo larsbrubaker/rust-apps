@@ -34,3 +34,6 @@
 [submodule "instant-astronomer"]
 	path = instant-astronomer
 	url = https://github.com/larsbrubaker/instant-astronomer.git
+[submodule "box2d-rust"]
+	path = box2d-rust
+	url = https://github.com/larsbrubaker/box2d-rust.git

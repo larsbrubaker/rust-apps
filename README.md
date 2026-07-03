@@ -4,7 +4,7 @@
 
 A curated suite of Rust libraries and applications by Lars Brubaker, bundled together as Git submodules so you can clone, build, and update them in one shot.
 
-The stack works from the bottom up: low-level geometry libraries (clipper2-rust, tess2-rust, manifold-rust) feed into the AGG-based rendering core (agg-rust + agg-gui), which in turn powers the end-user apps (atomartist, antidote, solitaire, instant-astronomer, Thingi10K). Everything is pure Rust, runs natively on Windows / macOS / Linux, and most of the apps also build to WebAssembly so you can try them in a browser without installing anything.
+The stack works from the bottom up: low-level geometry and physics libraries (clipper2-rust, tess2-rust, manifold-rust, box2d-rust) feed into the AGG-based rendering core (agg-rust + agg-gui), which in turn powers the end-user apps (atomartist, antidote, solitaire, instant-astronomer, Thingi10K). Everything is pure Rust, runs natively on Windows / macOS / Linux, and most of the apps also build to WebAssembly so you can try them in a browser without installing anything.
 
 [**Live stats dashboard**](https://larsbrubaker.github.io/rust-apps/) — stars, forks, watchers, open issues, and open PRs for every repo in the suite, refreshed daily via GitHub Pages.
 
@@ -46,6 +46,14 @@ Complete, pure Rust port of the [Clipper2 C++ library](https://github.com/AngusJ
 [![clipper2-rust demo](https://raw.githubusercontent.com/larsbrubaker/clipper2-rust/main/docs/demo-screenshot.png)](https://larsbrubaker.github.io/clipper2-rust/)
 
 [Live Demo](https://larsbrubaker.github.io/clipper2-rust/) · [Repository](https://github.com/larsbrubaker/clipper2-rust)
+
+---
+
+### [box2d-rust](https://github.com/larsbrubaker/box2d-rust)
+
+Pure Rust port (in progress) of [Box2D v3](https://github.com/erincatto/box2d) by Erin Catto — the 2D physics engine, ported module by module with exact behavioral matching, including its cross-platform deterministic math. Interactive wasm demos mirror the upstream samples app.
+
+[Live Demo](https://larsbrubaker.github.io/box2d-rust/) · [Repository](https://github.com/larsbrubaker/box2d-rust)
 
 ---
 
