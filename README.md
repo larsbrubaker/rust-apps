@@ -51,9 +51,11 @@ Complete, pure Rust port of the [Clipper2 C++ library](https://github.com/AngusJ
 
 ### [box2d-rust](https://github.com/larsbrubaker/box2d-rust)
 
-Pure Rust port (in progress) of [Box2D v3](https://github.com/erincatto/box2d) by Erin Catto — the 2D physics engine, ported module by module with exact behavioral matching, including its cross-platform deterministic math. Interactive wasm demos mirror the upstream samples app.
+Pure Rust port (in progress) of [Box2D v3](https://github.com/erincatto/box2d) by Erin Catto — the 2D physics engine, ported module by module with exact behavioral matching, including its cross-platform deterministic math. Full `b2World_Step` simulation is running; interactive wasm demos mirror the upstream samples app.
 
-[Live Demo](https://larsbrubaker.github.io/box2d-rust/) · [Repository](https://github.com/larsbrubaker/box2d-rust)
+[![box2d-rust demo](https://raw.githubusercontent.com/larsbrubaker/box2d-rust/main/readme_hero.jpg)](https://larsbrubaker.github.io/box2d-rust/)
+
+[Live Demo](https://larsbrubaker.github.io/box2d-rust/) · [Repository](https://github.com/larsbrubaker/box2d-rust) · [crates.io](https://crates.io/crates/box2d-rust)
 
 ---
 
