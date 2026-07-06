@@ -37,3 +37,6 @@
 [submodule "box2d-rust"]
 	path = box2d-rust
 	url = https://github.com/larsbrubaker/box2d-rust.git
+[submodule "box3d-rust"]
+	path = box3d-rust
+	url = https://github.com/larsbrubaker/box3d-rust.git

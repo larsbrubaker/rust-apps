@@ -4,7 +4,7 @@
 
 A curated suite of Rust libraries and applications by Lars Brubaker, bundled together as Git submodules so you can clone, build, and update them in one shot.
 
-The stack works from the bottom up: low-level geometry and physics libraries (clipper2-rust, tess2-rust, manifold-rust, box2d-rust) feed into the AGG-based rendering core (agg-rust + agg-gui), which in turn powers the end-user apps (atomartist, antidote, solitaire, instant-astronomer, Thingi10K). Everything is pure Rust, runs natively on Windows / macOS / Linux, and most of the apps also build to WebAssembly so you can try them in a browser without installing anything.
+The stack works from the bottom up: low-level geometry and physics libraries (clipper2-rust, tess2-rust, manifold-rust, box2d-rust, box3d-rust) feed into the AGG-based rendering core (agg-rust + agg-gui), which in turn powers the end-user apps (atomartist, antidote, solitaire, instant-astronomer, Thingi10K). Everything is pure Rust, runs natively on Windows / macOS / Linux, and most of the apps also build to WebAssembly so you can try them in a browser without installing anything.
 
 [**Live stats dashboard**](https://larsbrubaker.github.io/rust-apps/) — stars, forks, watchers, open issues, and open PRs for every repo in the suite, refreshed daily via GitHub Pages.
 
@@ -56,6 +56,16 @@ Pure Rust port (in progress) of [Box2D v3](https://github.com/erincatto/box2d) b
 [![box2d-rust demo](https://raw.githubusercontent.com/larsbrubaker/box2d-rust/main/readme_hero.jpg)](https://larsbrubaker.github.io/box2d-rust/)
 
 [Live Demo](https://larsbrubaker.github.io/box2d-rust/) · [Repository](https://github.com/larsbrubaker/box2d-rust) · [crates.io](https://crates.io/crates/box2d-rust)
+
+---
+
+### [box3d-rust](https://github.com/larsbrubaker/box3d-rust)
+
+Pure Rust port (just started) of [Box3D](https://github.com/erincatto/box3d) by Erin Catto — the new 3D physics engine released in June 2026, ported module by module with exact behavioral matching following the same playbook as box2d-rust.
+
+[![box3d-rust demo](https://raw.githubusercontent.com/larsbrubaker/box3d-rust/main/readme_hero.jpg)](https://larsbrubaker.github.io/box3d-rust/)
+
+[Live Demo](https://larsbrubaker.github.io/box3d-rust/) · [Repository](https://github.com/larsbrubaker/box3d-rust) · [crates.io](https://crates.io/crates/box3d-rust)
 
 ---
 
