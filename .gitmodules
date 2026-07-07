@@ -40,3 +40,6 @@
 [submodule "box3d-rust"]
 	path = box3d-rust
 	url = https://github.com/larsbrubaker/box3d-rust.git
+[submodule "keyinsight-rust"]
+	path = keyinsight-rust
+	url = https://github.com/larsbrubaker/keyinsight-rust.git
