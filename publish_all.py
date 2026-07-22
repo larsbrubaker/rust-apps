@@ -106,6 +106,12 @@ def git(repo: Path, *args: str, check: bool = True) -> str:
     return run(["git", *args], cwd=repo, check=check).stdout.strip()
 
 
+def load_toml(path: Path) -> dict:
+    # utf-8-sig tolerates a UTF-8 BOM (common in files written on Windows),
+    # which tomllib.load on a binary handle rejects.
+    return tomllib.loads(path.read_text(encoding="utf-8-sig"))
+
+
 def parse_version(text: str) -> tuple[int, ...]:
     core = text.split("-")[0].split("+")[0]
     return tuple(int(p) for p in core.split("."))
@@ -114,8 +120,7 @@ def parse_version(text: str) -> tuple[int, ...]:
 def local_crate_info(repo: Repo) -> tuple[str, str]:
     """Return (crate name, version) from the repo's publishable manifest."""
     assert repo.manifest is not None
-    with open(repo.manifest, "rb") as f:
-        data = tomllib.load(f)
+    data = load_toml(repo.manifest)
     pkg = data["package"]
     return pkg["name"], pkg["version"]
 
@@ -155,8 +160,7 @@ def check_sibling_requirements(repo: Repo, locals_: dict[str, str]) -> None:
     """Fail if repo's Cargo.toml requires an older sibling version than the
     one we are publishing (dependents must pick up the new releases)."""
     assert repo.manifest is not None
-    with open(repo.manifest, "rb") as f:
-        data = tomllib.load(f)
+    data = load_toml(repo.manifest)
     deps = data.get("dependencies", {})
     problems = []
     for sib in repo.depends_on:
