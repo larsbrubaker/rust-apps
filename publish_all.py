@@ -254,12 +254,23 @@ def main() -> int:
         if st["ahead"]:
             actions.append(f"push {st['ahead']} commit(s)")
         if st["dirty"]:
-            blockers.append(f"{repo.name} has uncommitted changes:\n{st['dirty']}")
+            # Only a repo we are about to publish must be clean (cargo publish
+            # would refuse anyway); elsewhere it's just concurrent work.
+            if st["publish"]:
+                blockers.append(
+                    f"{repo.name} has uncommitted changes:\n{st['dirty']}")
+            else:
+                print(f"  (note: {repo.name} has uncommitted changes; "
+                      f"pushing committed work only)")
         print(f"{repo.name:<16} {ver:<22} {', '.join(actions) or 'up to date'}")
 
     super_ahead = int(git(REPO_ROOT, "rev-list", "--count",
                           "origin/main..HEAD", check=False) or "0")
-    super_dirty = git(REPO_ROOT, "status", "--porcelain", "--untracked-files=no")
+    # Submodule drift (moved pointers, dirty submodule worktrees) is not a
+    # blocker — pointer bumps are deliberate release commits made separately,
+    # and concurrent work inside a submodule we aren't publishing is fine.
+    super_dirty = git(REPO_ROOT, "status", "--porcelain", "--untracked-files=no",
+                      "--ignore-submodules=all")
     print(f"{'<superproject>':<16} {'-':<22} "
           f"{f'push {super_ahead} commit(s)' if super_ahead else 'up to date'}")
     if super_dirty:
