@@ -185,7 +185,11 @@ def repo_state(repo: Repo) -> dict:
     if not repo.path.exists() or not (repo.path / ".git").exists():
         state["skip"] = "not checked out"
         return state
-    dirty = git(repo.path, "status", "--porcelain", "--untracked-files=no")
+    # Untracked/modified content inside nested submodules (e.g. C++ reference
+    # build junk) never reaches the published package; only pointer moves and
+    # the repo's own files matter here.
+    dirty = git(repo.path, "status", "--porcelain", "--untracked-files=no",
+                "--ignore-submodules=dirty")
     state["dirty"] = dirty
     branch = git(repo.path, "rev-parse", "--abbrev-ref", "HEAD")
     state["branch"] = branch
