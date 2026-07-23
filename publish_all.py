@@ -287,13 +287,12 @@ def main() -> int:
 
     # ---- Token ---------------------------------------------------------
     env = os.environ.copy()
-    if to_publish and not env.get("CARGO_REGISTRY_TOKEN"):
+    if to_publish and not args.dry_run and not env.get("CARGO_REGISTRY_TOKEN"):
         token = getpass.getpass("crates.io API token (input hidden): ").strip()
-        if not token and not args.dry_run:
+        if not token:
             print("No token provided.")
             return 1
-        if token:
-            env["CARGO_REGISTRY_TOKEN"] = token
+        env["CARGO_REGISTRY_TOKEN"] = token
 
     # ---- Execute -------------------------------------------------------
     for st in states:
