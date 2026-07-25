@@ -46,3 +46,6 @@
 [submodule "verovio-rust"]
 	path = verovio-rust
 	url = https://github.com/larsbrubaker/verovio-rust.git
+[submodule "AstroRock"]
+	path = AstroRock
+	url = https://github.com/larsbrubaker/AstroRock
