@@ -149,6 +149,16 @@ Four solitaire variants in Rust — Klondike, FreeCell, Spider, and Microsoft-st
 
 ---
 
+### [AstroRock](https://github.com/larsbrubaker/AstroRock)
+
+A faithful Rust port of AstroRock, the 1995–97 Windows 95 DirectDraw asteroids game by Lars Brubaker — the original 8-bit palettized compositor, deterministic 30 Hz simulation, sprites, sounds, and music, rebuilt on [agg-gui](https://github.com/larsbrubaker/agg-gui). Runs natively (winit + wgpu) and in the browser (WebAssembly), with tilt-steered touch controls on mobile.
+
+[![AstroRock demo](https://raw.githubusercontent.com/larsbrubaker/AstroRock/main/hero_readme.jpg)](https://larsbrubaker.github.io/AstroRock/)
+
+[Live Demo](https://larsbrubaker.github.io/AstroRock/) · [Repository](https://github.com/larsbrubaker/AstroRock)
+
+---
+
 ### [instant-astronomer](https://github.com/larsbrubaker/instant-astronomer)
 
 Point your phone at the sky and see what you're looking at — stars, planets, the Sun, the Moon, constellations, all driven by your location, the current time, and (on mobile) the device's compass + IMU. Tap any bright object to identify it: "that's Venus, magnitude −4.4." Rendered entirely through [agg-gui](https://github.com/larsbrubaker/agg-gui) — no separate WebGL / wgpu 3-D pipeline. Runs natively (winit + wgpu) and in the browser (WebAssembly).
