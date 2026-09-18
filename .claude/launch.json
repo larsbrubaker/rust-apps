@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "goesto12-docs",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8777", "--directory", "GoesTo12AirFilter/docs"],
+      "port": 8777
+    },
+    {
+      "name": "agg-gui-demo",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "agg-gui/demo/server.ts"],
+      "port": 3001
+    },
+    {
+      "name": "atomartist-wasm",
+      "runtimeExecutable": "basic-http-server",
+      "runtimeArgs": ["-a", "127.0.0.1:4000", "atomartist/demo-wasm"],
+      "port": 4000
+    },
+    {
+      "name": "astronomer-dist",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8778", "--directory", "instant-astronomer/demo/dist"],
+      "port": 8778
+    }
+  ]
+}
