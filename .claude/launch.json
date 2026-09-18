@@ -55,6 +55,18 @@
       ],
       "cwd": "Critters/demo",
       "port": 5174
+    },
+    {
+      "name": "critters-reference",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8790",
+        "--directory",
+        "Critters/reference"
+      ],
+      "port": 8790
     }
   ]
 }
