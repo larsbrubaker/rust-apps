@@ -49,3 +49,6 @@
 [submodule "AstroRock"]
 	path = AstroRock
 	url = https://github.com/larsbrubaker/AstroRock
+[submodule "Critters"]
+	path = Critters
+	url = https://github.com/larsbrubaker/Critters.git

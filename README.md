@@ -159,6 +159,16 @@ A faithful Rust port of AstroRock, the 1995–97 Windows 95 DirectDraw asteroids
 
 ---
 
+### [Critters](https://github.com/larsbrubaker/Critters)
+
+Critter Stack — a physics stacking game: build the tallest tower of forest critters you can without anyone falling off the stump. A faithful Rust port of the JavaScript original (hand-drawn vector critters with expressions and idle animations, altitude tiers, wind gusts, synthesized sound), rendered through [agg-gui](https://github.com/larsbrubaker/agg-gui) with [box2d-rust](https://github.com/larsbrubaker/box2d-rust) physics. Runs natively (winit + wgpu) and in the browser (WebAssembly).
+
+[![Critters demo](https://raw.githubusercontent.com/larsbrubaker/Critters/main/hero_readme.png)](https://larsbrubaker.github.io/Critters/)
+
+[Live Demo](https://larsbrubaker.github.io/Critters/) · [Repository](https://github.com/larsbrubaker/Critters)
+
+---
+
 ### [instant-astronomer](https://github.com/larsbrubaker/instant-astronomer)
 
 Point your phone at the sky and see what you're looking at — stars, planets, the Sun, the Moon, constellations, all driven by your location, the current time, and (on mobile) the device's compass + IMU. Tap any bright object to identify it: "that's Venus, magnitude −4.4." Rendered entirely through [agg-gui](https://github.com/larsbrubaker/agg-gui) — no separate WebGL / wgpu 3-D pipeline. Runs natively (winit + wgpu) and in the browser (WebAssembly).
