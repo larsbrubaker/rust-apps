@@ -52,3 +52,6 @@
 [submodule "Critters"]
 	path = Critters
 	url = https://github.com/larsbrubaker/Critters.git
+[submodule "colmap-rust"]
+	path = colmap-rust
+	url = https://github.com/larsbrubaker/colmap-rust.git

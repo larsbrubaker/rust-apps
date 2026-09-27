@@ -109,6 +109,14 @@ Pure Rust port of the [Manifold](https://github.com/elalish/manifold) 3D geometr
 
 ---
 
+### [colmap-rust](https://github.com/larsbrubaker/colmap-rust)
+
+Pure Rust port (just started) of [COLMAP](https://github.com/colmap/colmap) 4.2.0 — Structure-from-Motion and Multi-View Stereo, from photos to camera poses, point clouds and meshes. Built on agg-gui from day one, so the same app runs natively and in the browser on WebGPU; COLMAP's own tests are ported 1:1 as the spec.
+
+[Live Demo](https://larsbrubaker.github.io/colmap-rust/) · [Repository](https://github.com/larsbrubaker/colmap-rust)
+
+---
+
 ### [Thingi10K](https://github.com/larsbrubaker/Thingi10K)
 
 Searchable 3D model archive browser for the [Thingi10K dataset](https://ten-thousand-models.appspot.com/) — 10,000 Thingiverse models with mesh quality metadata. Built with Rust/WASM.
