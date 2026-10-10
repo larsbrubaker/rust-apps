@@ -55,3 +55,6 @@
 [submodule "colmap-rust"]
 	path = colmap-rust
 	url = https://github.com/larsbrubaker/colmap-rust.git
+[submodule "HDTreeMap"]
+	path = HDTreeMap
+	url = https://github.com/larsbrubaker/HDTreeMap.git
