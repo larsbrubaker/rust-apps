@@ -177,6 +177,16 @@ Critter Stack — a physics stacking game: build the tallest tower of forest cri
 
 ---
 
+### [HDTreeMap](https://github.com/larsbrubaker/HDTreeMap)
+
+A fast disk-usage treemap viewer in the spirit of WinDirStat, QDirStat and GrandPerspective. It scans a drive or folder in parallel and shows every file as a cushion-shaded rectangle sized by how much space it takes. The map fills in live while the scan runs, and it is linked to a folder tree and a file-type legend. You can zoom, highlight, reveal, rescan, and safely Move to Trash. Rendered through [agg-gui](https://github.com/larsbrubaker/agg-gui). Runs natively on Windows, macOS and Linux; the browser demo explores a set of simulated drives.
+
+[![HDTreeMap demo](https://raw.githubusercontent.com/larsbrubaker/HDTreeMap/main/readme_hero.png)](https://larsbrubaker.github.io/HDTreeMap/)
+
+[Live Demo](https://larsbrubaker.github.io/HDTreeMap/) · [Repository](https://github.com/larsbrubaker/HDTreeMap)
+
+---
+
 ### [instant-astronomer](https://github.com/larsbrubaker/instant-astronomer)
 
 Point your phone at the sky and see what you're looking at — stars, planets, the Sun, the Moon, constellations, all driven by your location, the current time, and (on mobile) the device's compass + IMU. Tap any bright object to identify it: "that's Venus, magnitude −4.4." Rendered entirely through [agg-gui](https://github.com/larsbrubaker/agg-gui) — no separate WebGL / wgpu 3-D pipeline. Runs natively (winit + wgpu) and in the browser (WebAssembly).
