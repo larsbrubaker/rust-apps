@@ -187,6 +187,14 @@ A fast disk-usage treemap viewer in the spirit of WinDirStat, QDirStat and Grand
 
 ---
 
+### [ScreenSnap](https://github.com/larsbrubaker/ScreenSnap)
+
+A Greenshot-style screenshot tool for the Mac. Press your own global hotkey and the screen freezes — open menus, tooltips and the mouse pointer included — then drag a marquee to copy the region to the clipboard and/or save it as a PNG. A pixel magnifier, crosshair guides and size readout make selections exact. Lives in the menu bar, rendered through [agg-gui](https://github.com/larsbrubaker/agg-gui). Windows and Linux are on the way.
+
+[Repository](https://github.com/larsbrubaker/ScreenSnap)
+
+---
+
 ### [instant-astronomer](https://github.com/larsbrubaker/instant-astronomer)
 
 Point your phone at the sky and see what you're looking at — stars, planets, the Sun, the Moon, constellations, all driven by your location, the current time, and (on mobile) the device's compass + IMU. Tap any bright object to identify it: "that's Venus, magnitude −4.4." Rendered entirely through [agg-gui](https://github.com/larsbrubaker/agg-gui) — no separate WebGL / wgpu 3-D pipeline. Runs natively (winit + wgpu) and in the browser (WebAssembly).

@@ -58,3 +58,6 @@
 [submodule "HDTreeMap"]
 	path = HDTreeMap
 	url = https://github.com/larsbrubaker/HDTreeMap.git
+[submodule "ScreenSnap"]
+	path = ScreenSnap
+	url = https://github.com/larsbrubaker/ScreenSnap.git
