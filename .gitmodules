@@ -61,3 +61,6 @@
 [submodule "ScreenSnap"]
 	path = ScreenSnap
 	url = https://github.com/larsbrubaker/ScreenSnap.git
+[submodule "TaskManager"]
+	path = TaskManager
+	url = https://github.com/larsbrubaker/TaskManager.git
