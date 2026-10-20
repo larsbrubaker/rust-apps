@@ -282,9 +282,14 @@ def esc(s: str) -> str:
     )
 
 
+# Inline SVG (Octicons repo-forked): U+2B6F has no glyph in common mobile fonts.
+FORK_ICON = (
+    '<svg class="ico" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/></svg>'
+)
+
 METRICS = [
     ("stars",     "Stars",     "&#9733;"),  # star
-    ("forks",     "Forks",     "&#11119;"), # fork-ish
+    ("forks",     "Forks",     FORK_ICON),
     ("watchers",  "Watchers",  "&#128065;"), # eye
     ("issues",    "Issues",    "&#9888;"),  # warning
     ("prs",       "PRs",       "&#8644;"),  # arrows
@@ -369,11 +374,11 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
 
     summary_cards = "".join(
         f"""
-        <div class="card">
+        <button type="button" class="card" data-key="{key}" title="Sort repositories by {esc(label.lower())}">
           <div class="card-icon">{icon}</div>
           <div class="card-value">{totals[key]:,}</div>
           <div class="card-label">{esc(label)}</div>
-        </div>"""
+        </button>"""
         for key, label, icon in METRICS
     )
 
@@ -453,7 +458,14 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
     box-shadow: var(--shadow);
     display: flex; flex-direction: column; gap: 4px;
     position: relative; overflow: hidden;
+    font: inherit; color: inherit; text-align: left; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.15s, transform 0.15s;
   }}
+  .card:hover {{ border-color: var(--accent); }}
+  .card:active {{ transform: scale(0.98); }}
+  .card.active {{ border-color: var(--accent); background: var(--accent-soft); }}
+  .ico {{ display: inline-block; vertical-align: -0.125em; }}
   .card::before {{
     content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
     background: linear-gradient(90deg, var(--accent), transparent 80%);
@@ -469,6 +481,7 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
     box-shadow: var(--shadow);
     overflow: hidden;
   }}
+  .table-scroll {{ overflow-x: auto; -webkit-overflow-scrolling: touch; }}
   table {{ width: 100%; border-collapse: collapse; }}
   thead th {{
     text-align: left;
@@ -541,6 +554,7 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
     tbody td:not(:first-child) {{ padding: 12px 8px; }}
     .desc {{ display: none; }}
     .thumb {{ width: 64px; height: 32px; }}
+    .name-cell {{ min-width: 240px; }}
   }}
 </style>
 </head>
@@ -558,12 +572,13 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
   </section>
 
   <section class="panel">
+    <div class="table-scroll">
     <table id="repos">
       <thead>
         <tr>
           <th data-key="label">Repository <span class="sort-ind"></span></th>
           <th class="num" data-key="stars">&#9733; Stars <span class="sort-ind">&#9660;</span></th>
-          <th class="num" data-key="forks">&#11119; Forks <span class="sort-ind"></span></th>
+          <th class="num" data-key="forks">{FORK_ICON} Forks <span class="sort-ind"></span></th>
           <th class="num" data-key="watchers">&#128065; Watchers <span class="sort-ind"></span></th>
           <th class="num" data-key="issues">&#9888; Issues <span class="sort-ind"></span></th>
           <th class="num" data-key="prs">&#8644; PRs <span class="sort-ind"></span></th>
@@ -574,6 +589,7 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
         {''.join(rows_html_parts)}
       </tbody>
     </table>
+    </div>
   </section>
 
   {missing_html}
@@ -589,6 +605,7 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
     if (!table) return;
     const tbody = table.tBodies[0];
     const headers = table.tHead.rows[0].cells;
+    const cards = document.querySelectorAll('.card[data-key]');
     let activeCol = 1, activeDir = -1; // start sorted by stars desc
 
     function sortBy(col, dir) {{
@@ -605,6 +622,8 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
         const ind = headers[i].querySelector('.sort-ind');
         if (ind) ind.textContent = (i === col) ? (dir === 1 ? '\\u25B2' : '\\u25BC') : '';
       }}
+      const key = headers[col].dataset.key;
+      cards.forEach(c => c.classList.toggle('active', c.dataset.key === key));
     }}
 
     Array.from(headers).forEach((th, i) => {{
@@ -614,6 +633,18 @@ def render_html(rows: list[dict], generated_at: datetime) -> str:
         sortBy(activeCol, activeDir);
       }});
     }});
+
+    // Summary cards sort the table by their column (descending) and bring it into view.
+    cards.forEach(card => {{
+      card.addEventListener('click', () => {{
+        const col = Array.from(headers).findIndex(h => h.dataset.key === card.dataset.key);
+        if (col < 0) return;
+        activeCol = col; activeDir = -1;
+        sortBy(activeCol, activeDir);
+        table.closest('.panel').scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+      }});
+    }});
+    cards.forEach(c => c.classList.toggle('active', c.dataset.key === 'stars'));
   }})();
 </script>
 </body>
