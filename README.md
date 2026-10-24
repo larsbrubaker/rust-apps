@@ -117,6 +117,14 @@ Pure Rust port (just started) of [COLMAP](https://github.com/colmap/colmap) 4.2.
 
 ---
 
+### [whistle-rust](https://github.com/larsbrubaker/whistle-rust)
+
+Pure Rust port (in progress) of [Whistle](https://huggingface.co/Cactus-Compute/whistle), Cactus Compute's 16.9 MB on-device speech-to-text model — English, German, French, Spanish, Italian, Dutch and Polish, natively and in the browser. Ported stage by stage against upstream's Apache-2.0 JAX reference running on the same weights; the speech input for MatterCAD Rust.
+
+[Repository](https://github.com/larsbrubaker/whistle-rust)
+
+---
+
 ### [Thingi10K](https://github.com/larsbrubaker/Thingi10K)
 
 Searchable 3D model archive browser for the [Thingi10K dataset](https://ten-thousand-models.appspot.com/) — 10,000 Thingiverse models with mesh quality metadata. Built with Rust/WASM.

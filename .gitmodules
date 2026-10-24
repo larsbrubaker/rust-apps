@@ -64,3 +64,6 @@
 [submodule "TaskManager"]
 	path = TaskManager
 	url = https://github.com/larsbrubaker/TaskManager.git
+[submodule "whistle-rust"]
+	path = whistle-rust
+	url = https://github.com/larsbrubaker/whistle-rust.git
