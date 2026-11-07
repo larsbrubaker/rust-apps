@@ -109,6 +109,14 @@ Pure Rust port of the [Manifold](https://github.com/elalish/manifold) 3D geometr
 
 ---
 
+### [solidmesh](https://github.com/larsbrubaker/solidmesh)
+
+Solid modeling on triangle meshes in pure Rust — booleans (on manifold-rust), fillets and chamfers, repair and SDF operations that keep closed solids closed, on clean parts and messy real-world meshes alike. MatterCAD's geometry kernel, being moved into its own library (no code has moved yet).
+
+[Repository](https://github.com/larsbrubaker/solidmesh)
+
+---
+
 ### [colmap-rust](https://github.com/larsbrubaker/colmap-rust)
 
 Pure Rust port (just started) of [COLMAP](https://github.com/colmap/colmap) 4.2.0 — Structure-from-Motion and Multi-View Stereo, from photos to camera poses, point clouds and meshes. Built on agg-gui from day one, so the same app runs natively and in the browser on WebGPU; COLMAP's own tests are ported 1:1 as the spec.

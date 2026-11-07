@@ -67,3 +67,6 @@
 [submodule "whistle-rust"]
 	path = whistle-rust
 	url = https://github.com/larsbrubaker/whistle-rust.git
+[submodule "solidmesh"]
+	path = solidmesh
+	url = https://github.com/larsbrubaker/solidmesh.git

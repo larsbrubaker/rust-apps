@@ -79,6 +79,8 @@ REPOS: list[Repo] = [
     Repo("clipper2-rust"),
     Repo("tess2-rust"),
     Repo("manifold-rust"),
+    # No crate yet: pushed only, until its crates move in from mattercad-rust.
+    Repo("solidmesh", crate_dir=None),
     Repo("agg-gui", crate_dir="agg-gui",
          depends_on=["agg-rust", "clipper2-rust", "tess2-rust"]),
     Repo("box2d-rust"),
