@@ -34,7 +34,6 @@ BADGE_PATTERNS = [
         r"github\.com/[^/]+/[^/]+/actions/workflows/[^/]+/badge\.svg",
         r"github\.com/[^/]+/[^/]+/workflows/[^/]+/badge\.svg",
         r"codecov\.io",
-        r"buymeacoffee\.com",
         r"opencollective\.com",
         r"/badge\.svg(?:$|\?)",
     )
