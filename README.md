@@ -108,9 +108,11 @@ Pure Rust port of the [Manifold](https://github.com/elalish/manifold) 3D geometr
 
 ### [solidmesh](https://github.com/larsbrubaker/solidmesh)
 
-Solid modeling on triangle meshes in pure Rust — booleans (on manifold-rust), fillets and chamfers, repair and SDF operations that keep closed solids closed, on clean parts and messy real-world meshes alike. MatterCAD's geometry kernel, being moved into its own library (no code has moved yet).
+Solid modeling on triangle meshes in pure Rust — booleans (on manifold-rust), fillets and chamfers, repair and SDF operations that keep closed solids closed, on clean parts and messy real-world meshes alike. MatterCAD's geometry kernel, moving into its own library: fillets and chamfers already run from it.
 
-[Repository](https://github.com/larsbrubaker/solidmesh)
+[![solidmesh demo](https://raw.githubusercontent.com/larsbrubaker/solidmesh/main/README_HERO.png)](https://larsbrubaker.github.io/solidmesh/)
+
+[Live Demo](https://larsbrubaker.github.io/solidmesh/) · [Repository](https://github.com/larsbrubaker/solidmesh)
 
 ---
 
