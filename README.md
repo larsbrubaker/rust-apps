@@ -116,6 +116,16 @@ Solid modeling on triangle meshes in pure Rust — booleans (on manifold-rust), 
 
 ---
 
+### [solidfem](https://github.com/larsbrubaker/solidfem)
+
+Linear-static structural analysis on tetrahedral meshes in pure Rust, for native and WebAssembly: 10-node elements and a solver that runs in slices, checked against textbook answers. The demo covers solid bars and thick-walled tubes; arbitrary and thin-walled parts are not ready yet, and it is not for safety-critical use.
+
+[![solidfem demo](https://raw.githubusercontent.com/larsbrubaker/solidfem/main/README_HERO.jpg)](https://larsbrubaker.github.io/solidfem/)
+
+[Live Demo](https://larsbrubaker.github.io/solidfem/) · [Repository](https://github.com/larsbrubaker/solidfem)
+
+---
+
 ### [colmap-rust](https://github.com/larsbrubaker/colmap-rust)
 
 Pure Rust port (just started) of [COLMAP](https://github.com/colmap/colmap) 4.2.0 — Structure-from-Motion and Multi-View Stereo, from photos to camera poses, point clouds and meshes. Built on agg-gui from day one, so the same app runs natively and in the browser on WebGPU; COLMAP's own tests are ported 1:1 as the spec.
